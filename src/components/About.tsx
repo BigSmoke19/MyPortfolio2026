@@ -6,7 +6,7 @@ export function About() {
   return (
     <section id="about" className="py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading eyebrow="01 · About" title="Who I am" />
+        <SectionHeading eyebrow="01 · About" title="Who Am I" />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10">
           <FadeIn delay={0.1}>
