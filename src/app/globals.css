@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0e17;
+  --foreground: #f5f7fa;
+  --primary: #2e6bff;
+  --secondary: #ff3b3b;
+  --muted: #1b2130;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-geist);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 0 rgba(46, 107, 255, 0);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .glow-primary:hover {
+    box-shadow: 0 0 24px 4px rgba(46, 107, 255, 0.45);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(46, 107, 255, 0.35);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(245, 247, 250, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245, 247, 250, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(46, 107, 255, 0.35);
+  color: #f5f7fa;
 }
