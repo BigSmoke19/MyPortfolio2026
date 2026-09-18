@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/lib/data";
+import { navLinks, identity } from "@/lib/data";
+import { Typewriter } from "./ui/Typewriter";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,12 +29,15 @@ export function Header() {
           scrolled ? "bg-background/80 backdrop-blur-xl" : "bg-background/40 backdrop-blur-lg"
         }`}
       >
-        <a href="#top" className="flex items-center gap-3 shrink-0">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 text-primary font-heading font-bold text-sm border border-primary/30">
+        <a href="#top" className="flex items-center gap-3 min-w-0">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 text-primary font-heading font-bold text-sm border border-primary/30 shrink-0">
             MS
           </span>
-          <span className="hidden sm:inline font-heading font-semibold text-foreground">
-            Mohammad Safieddine
+          <span className="hidden sm:inline font-heading font-semibold text-foreground whitespace-nowrap">
+            {identity.name}
+          </span>
+          <span className="sm:hidden min-w-0 truncate font-mono text-sm font-semibold text-foreground">
+            <Typewriter text={identity.name} />
           </span>
         </a>
 
