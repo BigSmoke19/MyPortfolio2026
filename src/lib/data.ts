@@ -4,7 +4,7 @@ export const identity = {
   role: "Full-Stack Developer & Applied AI/LLM Engineer",
   location: "Beirut, Lebanon",
   email: "mohammadsafieddine789@gmail.com",
-  linkedin: "https://linkedin.com/in/mohammad-safieddine",
+  linkedin: "https://www.linkedin.com/in/mohammad-safieddine-153635248/",
   github: "https://github.com/BigSmoke19",
 };
 
